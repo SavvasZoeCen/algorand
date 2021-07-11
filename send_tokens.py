@@ -33,7 +33,7 @@ def send_tokens( receiver_pk, tx_amount ):
     pk = mnemonic.to_public_key(mnemonic_secret)
     
     #Pay our account
-    txtn = transaction.PaymentTxn(sender_pk, tx_fee, first_valid_round, last_valid_round, gen_hash, receiver_pk, tx_amount)
+    txtn = transaction.PaymentTxn(pk, tx_fee, first_valid_round, last_valid_round, gen_hash, receiver_pk, tx_amount)
     signedTxtn = txtn.sign(sk)
     
     #Sending a transaction to the Testnet
